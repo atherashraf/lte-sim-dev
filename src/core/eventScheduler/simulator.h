@@ -19,9 +19,6 @@
  * Author: Giuseppe Piro <g.piro@poliba.it>
  */
 
-
-
-
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
@@ -29,17 +26,7 @@
 #include "calendar.h"
 #include "make-event.h"
 
-#include <stdint.h>
-#include <string>
-#include <iostream>
-
-
-/*
- * Simulator
- * Control the scheduling of simulation events.
- */
-
-class Simulator 
+class Simulator
 {
 private:
 	Simulator ();
@@ -56,7 +43,11 @@ private:
 	void ProcessOneEvent (void);
 
 public:
+    Simulator(bool bypassSingleton);  // Public constructor to bypass the singleton
 	virtual ~Simulator ();
+
+	// Static method to access the singleton instance
+    Simulator* get_instance();
 
 	static Simulator*
 	Init (void)

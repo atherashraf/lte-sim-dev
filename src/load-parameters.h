@@ -28,7 +28,7 @@
 
 
 /* path */
-static std::string path ("/Users/giuseppepiro/Desktop/lte-sim/");
+static std::string path ("/Users/atherashraf/PycharmProjects/PhDStudents/py-lte-sim-dev/lte-sim-dev/");
 
 
 /* tracing */

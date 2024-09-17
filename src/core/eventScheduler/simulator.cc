@@ -35,14 +35,37 @@
 
 Simulator* Simulator::ptr=NULL;
 
+// Private constructor for singleton pattern
 Simulator::Simulator ()
 {
-  m_stop = false;
-  m_currentUid = 0;
-  m_currentTs = 0;
-  m_unscheduledEvents = 0;
-  m_calendar = new Calendar;
-  m_uid = 0;
+    std::cout << "Singleton Simulator instance created" << std::endl;
+    m_stop = false;
+    m_currentUid = 0;
+    m_currentTs = 0;
+    m_unscheduledEvents = 0;
+    m_calendar = new Calendar;
+    m_uid = 0;
+}
+
+// Public constructor for direct instantiation (bypassing singleton)
+Simulator::Simulator(bool bypassSingleton)
+{
+    std::cout << "Direct Simulator instance created (bypassing singleton)" << std::endl;
+    m_stop = false;
+    m_currentUid = 0;
+    m_currentTs = 0;
+    m_unscheduledEvents = 0;
+    m_calendar = new Calendar;
+    m_uid = 0;
+}
+// Static method to get the singleton instance
+Simulator* Simulator::get_instance()
+{
+    if (ptr == NULL)
+    {
+        ptr = new Simulator();  // Create the singleton instance if it doesn't exist
+    }
+    return ptr;
 }
 
 Simulator::~Simulator ()
@@ -61,7 +84,7 @@ Simulator::Now (void)
 }
 
 
-void 
+void
 Simulator::Run (void)
 {
   /*
@@ -97,7 +120,7 @@ Simulator::GetUID (void)
   return (m_uid-1);
 }
 
-void 
+void
 Simulator::Stop (void)
 {
   std::cout << " SIMULATOR_DEBUG: Stop ()"
@@ -105,7 +128,7 @@ Simulator::Stop (void)
   m_stop = true;
 }
 
-void 
+void
 Simulator::SetStop (double time)
 {
   DoSchedule (time,
