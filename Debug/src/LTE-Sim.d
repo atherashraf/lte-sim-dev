@@ -127,6 +127,14 @@ src/LTE-Sim.d: ../src/LTE-Sim.cpp ../src/TEST/test.h \
   ../src/scenarios/../phy/simple-error-model.h \
   ../src/scenarios/../load-parameters.h \
   ../src/scenarios/single-cell-with-interference.h \
+  ../src/scenarios/../componentManagers/NetworkManager.h \
+  ../src/scenarios/../utility/CellPosition.h \
+  ../src/scenarios/../utility/frequency-reuse-helper.h \
+  ../src/scenarios/../device/Gateway.h \
+  ../src/scenarios/../device/UserEquipment.h \
+  ../src/scenarios/../protocolStack/mac/henb-mac-entity.h \
+  ../src/scenarios/../device/CqiManager/fullband-cqi-manager.h \
+  ../src/scenarios/../channel/propagation-model/propagation-loss-model.h \
   ../src/scenarios/single-cell-with-femto.h \
   ../src/scenarios/../utility/UsersDistribution.h \
   ../src/TEST/../utility/../componentManagers/NetworkManager.h \
@@ -420,6 +428,22 @@ src/LTE-Sim.d: ../src/LTE-Sim.cpp ../src/TEST/test.h \
 ../src/scenarios/../load-parameters.h:
 
 ../src/scenarios/single-cell-with-interference.h:
+
+../src/scenarios/../componentManagers/NetworkManager.h:
+
+../src/scenarios/../utility/CellPosition.h:
+
+../src/scenarios/../utility/frequency-reuse-helper.h:
+
+../src/scenarios/../device/Gateway.h:
+
+../src/scenarios/../device/UserEquipment.h:
+
+../src/scenarios/../protocolStack/mac/henb-mac-entity.h:
+
+../src/scenarios/../device/CqiManager/fullband-cqi-manager.h:
+
+../src/scenarios/../channel/propagation-model/propagation-loss-model.h:
 
 ../src/scenarios/single-cell-with-femto.h:
 

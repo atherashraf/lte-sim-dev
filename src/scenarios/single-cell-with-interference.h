@@ -22,6 +22,7 @@
 #include "../channel/LteChannel.h"
 #include "../phy/enb-lte-phy.h"
 #include "../phy/ue-lte-phy.h"
+#include "../device/ENodeB.h"  // Include ENodeB header
 #include "../core/spectrum/bandwidth-manager.h"
 #include "../networkTopology/Cell.h"
 #include "../protocolStack/packet/packet-burst.h"
@@ -37,12 +38,21 @@
 #include "../flows/QoS/QoSForFLS.h"
 #include "../flows/QoS/QoSForM_LWDF.h"
 #include "../componentManagers/FrameManager.h"
+#include "../componentManagers/NetworkManager.h"
 #include "../utility/seed.h"
 #include "../utility/RandomVariable.h"
 #include "../phy/wideband-cqi-eesm-error-model.h"
 #include "../phy/simple-error-model.h"
 #include "../channel/propagation-model/macrocell-urban-area-channel-realization.h"
 #include "../load-parameters.h"
+#include "../utility/CellPosition.h"
+#include "../utility/frequency-reuse-helper.h"
+#include "../device/Gateway.h"
+#include "../device/UserEquipment.h"
+#include "../protocolStack/mac/henb-mac-entity.h"
+#include "../device/CqiManager/fullband-cqi-manager.h"
+#include "../channel/propagation-model/propagation-loss-model.h"
+#include "../channel/LteChannel.h"
 #include <queue>
 #include <fstream>
 #include <stdlib.h>
